@@ -8,6 +8,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const authRoute = require('./routes/authRoute')
+const channelRoute = require('./routes/channelRoute')
 
 const app = express()
 const server = http.createServer(app)
@@ -19,6 +20,7 @@ app.use(bodyParser.json())
 
 // authentication route
 app.use('/api/v1/auth', authRoute)
+app.use('/api/v1/channels', channelRoute)
 
 // socket.io
 io.on('connection', socket => {

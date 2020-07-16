@@ -1,19 +1,14 @@
-<div class="msger">
-  <div class="msger-header">
+<div class="container">
+  <div class="header">
     <div>
       <button class="logout-btn" (click)="logout()">Log out</button>
       <h3>Chat app</h3>
     </div>
-    <div class="msger-header-options">
-      <span><i class="fas fa-cog"></i></span>
-    </div>
   </div>
 
-  <div class="msger-chat">
+  <div class="chat-board">
     <div class="msg left-msg">
       <div class="msg-bubble-left">
-        <div class="msg-info"></div>
-
         <div class="msg-text">
           Hi, welcome to SimpleChat! Go ahead and send me check sdfdsfjsdfnjfnksdjfkjnkjnj
         </div>
@@ -23,8 +18,6 @@
 
     <div class="msg right-msg">
       <div class="msg-bubble-right">
-        <div class="msg-info"></div>
-
         <div class="msg-text">
           You can change your name in JS section!
         </div>
@@ -33,8 +26,8 @@
     <div class="msg-info-name-right">You</div>
   </div>
 
-  <form class="msger-inputarea">
-    <input type="text" class="msger-input" placeholder="Start a new message" />
-    <button type="submit" class="msger-send-btn">send</button>
+  <form class="chat-inputarea">
+    <input type="text" class="chat-input" placeholder="Start a new message" />
+    <button type="submit" class="send-btn">send</button>
   </form>
 </div>
