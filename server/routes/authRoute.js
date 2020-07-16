@@ -20,6 +20,8 @@ router.post('/signup', async (req, res) => {
 })
 
 router.post('/signin', async (req, res) => {
+  console.log(req.body.username)
+  console.log(req.body.password)
   const username = req.body.username
   const password = req.body.password
 
@@ -31,7 +33,7 @@ router.post('/signin', async (req, res) => {
 
   if (!match) return res.json('Password did not match')
 
-  const token = jwt.sign({ user }, process.env.SECRET_KEY)
+  const token = jwt.sign({ user: { username: user.username } }, process.env.SECRET_KEY)
 
   res.json({ token })
 })
