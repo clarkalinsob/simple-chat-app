@@ -1,12 +1,5 @@
 const { model, Schema } = require('mongoose')
 
-const channelSchema = new Schema(
-  {
-    convo: [messageSchema]
-  },
-  { timestamps: true }
-)
-
 const messageSchema = new Schema(
   {
     username: {
@@ -17,6 +10,13 @@ const messageSchema = new Schema(
       type: String,
       required: true
     }
+  },
+  { timestamps: true }
+)
+
+const channelSchema = new Schema(
+  {
+    convo: [messageSchema]
   },
   { timestamps: true }
 )
