@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  position: fixed;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+  height: calc(100%);
+  border: 2px solid #ddd;
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  text-align: center;
+  justify-content: space-between;
+  padding: 5px 0 5px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.form-container {
+  flex: 1;
+  overflow-y: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+input {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  width: 88%;
+  font-size: 1em;
+  background: #f5f8fa;
+  color: #687a89;
+}
+
+.error-msg {
+  padding-top: 20px;
+  color: red;
+}
+
+.terms-msg {
+  text-align: left;
+  margin: 20px;
+  color: #687a89;
+}
+
+.signin-btn {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  font-size: 1em;
+  border: none;
+  width: 92%;
+  background: #88e407;
+  color: #fff;
+  text-align: center;
+}
