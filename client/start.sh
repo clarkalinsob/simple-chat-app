@@ -1,1 +1,1 @@
-serve -s dist/simple-chat-app
+serve -s dist/client
