@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class ChannelService {
-  apiUrl: string = 'http://localhost:4000/api/v1'
+  apiUrl: string = 'https://chatapp.clarkalinsob.com/server/api/v1'
 
   constructor(private http: HttpClient) {}
 

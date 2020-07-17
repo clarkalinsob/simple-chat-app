@@ -9,14 +9,14 @@ import { ChannelService } from './channel.service'
 })
 export class SocketioService {
   socket: any
-  apiUrl: string = 'http://localhost:4000/api/v1'
+  apiUrl: string = 'https://chatapp.clarkalinsob.com/server/api/v1'
   obj: any
   realtimeData: Subject<any> = new Subject<any>()
 
   constructor(private http: HttpClient, private channelService: ChannelService) {}
 
   setupSocketConnection(): void {
-    this.socket = io('ws://localhost:4000')
+    this.socket = io('https://chatapp.clarkalinsob.com/server')
 
     this.socket.on('new-message', msg => this.realtimeData.next(msg))
   }
