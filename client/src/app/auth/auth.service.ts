@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 })
 export class AuthService {
   currentUser: Observable<any>
-  apiUrl: string = 'http://localhost:5000/api/v1'
+  apiUrl: string = 'http://localhost:4000/api/v1'
 
   constructor(private http: HttpClient, private router: Router) {}
 

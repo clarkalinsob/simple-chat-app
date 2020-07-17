@@ -1,0 +1,1 @@
+serve -s dist/simple-chat-app
