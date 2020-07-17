@@ -7,10 +7,11 @@ import { AppComponent } from './app.component'
 import { SocketioService } from './services/socketio.service'
 import { ChatBoardComponent } from './components/chat-board/chat-board.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ChatMessageComponent } from './components/chat-message/chat-message.component'
 
 @NgModule({
-  declarations: [AppComponent, ChatBoardComponent, SignInComponent],
+  declarations: [AppComponent, ChatBoardComponent, SignInComponent, ChatMessageComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [SocketioService],
   bootstrap: [AppComponent]

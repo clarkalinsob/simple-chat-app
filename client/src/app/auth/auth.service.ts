@@ -21,8 +21,12 @@ export class AuthService {
     else return false
   }
 
-  public getCurrentUser(): Observable<any> {
-    return this.currentUser
+  getCurrentUser(): Observable<any> {
+    if (this.currentUser) return this.currentUser
+    else {
+      this.currentUser = JSON.parse(localStorage.getItem('chatapp:user'))
+      return this.currentUser
+    }
   }
 
   signup(user: any) {

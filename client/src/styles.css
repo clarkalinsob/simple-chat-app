@@ -1,14 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
 html {
   box-sizing: border-box;
 }
 
 body {
   margin: auto;
-  position: absolute;
+  width: 40%;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: var(--body-bg);
   font-family: Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: auto;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+  }
 }

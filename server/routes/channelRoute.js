@@ -23,9 +23,10 @@ router.patch('/:channelId', async (req, res) => {
 
   channel.convo.push(msgObject)
 
-  await channel.save()
+  const { convo } = await channel.save()
+  const returnObj = convo[convo.length - 1]
 
-  res.json('Message saved')
+  res.json(returnObj)
 })
 
 module.exports = router

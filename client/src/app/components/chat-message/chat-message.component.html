@@ -1,0 +1,8 @@
+<div [className]="right ? 'msg right-msg' : 'msg left-msg'">
+  <div [className]="right ? 'msg-bubble-right' : 'msg-bubble-left'">
+    <div *ngIf="msgObj" class="msg-text">
+      {{ msgObj.message }}
+    </div>
+  </div>
+</div>
+<div *ngIf="msgObj" [className]="right ? 'msg-info-name-right' : 'msg-info-name-left'">{{ right ? 'You' : msgObj.username }}</div>
