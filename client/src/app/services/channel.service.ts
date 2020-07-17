@@ -6,11 +6,11 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class ChannelService {
-  api: string = 'http://localhost:5000/api/v1/channels/5f1003dcdbe57008904a09cf'
+  apiUrl: string = 'http://localhost:5000/api/v1'
 
   constructor(private http: HttpClient) {}
 
   getChannelConvo(): Observable<any> {
-    return this.http.get<any[]>(this.api)
+    return this.http.get<any[]>(`${this.apiUrl}/channels/5f1003dcdbe57008904a09cf`)
   }
 }

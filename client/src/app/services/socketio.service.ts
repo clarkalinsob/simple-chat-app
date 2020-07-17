@@ -9,7 +9,7 @@ import { ChannelService } from './channel.service'
 })
 export class SocketioService {
   socket: any
-  api: string = 'http://localhost:5000/api/v1/channels/5f1003dcdbe57008904a09cf'
+  apiUrl: string = 'http://localhost:5000/api/v1'
   obj: any
   realtimeData: Subject<any> = new Subject<any>()
 
@@ -27,6 +27,6 @@ export class SocketioService {
 
   sendMessage(msgObject: any): Observable<any> {
     this.socket.emit('new-message', msgObject)
-    return this.http.patch<any>(this.api, { msgObject })
+    return this.http.patch<any>(`${this.apiUrl}/channels/5f1003dcdbe57008904a09cf`, { msgObject })
   }
 }

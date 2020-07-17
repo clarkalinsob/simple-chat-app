@@ -9,7 +9,8 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 export class AuthService {
-  public currentUser: Observable<any>
+  currentUser: Observable<any>
+  apiUrl: string = 'http://localhost:5000/api/v1'
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -29,13 +30,9 @@ export class AuthService {
     }
   }
 
-  signup(user: any) {
-    return this.http.post('http://localhost:5000/api/v1/signup', user)
-  }
-
   signin(username: string, password: string) {
     return this.http
-      .post<any>('http://localhost:5000/api/v1/auth/signin', { username, password })
+      .post<any>(`${this.apiUrl}/auth/signin`, { username, password })
       .pipe(
         map(data => {
           if (data.token) {
