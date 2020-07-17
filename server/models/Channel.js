@@ -16,6 +16,10 @@ const messageSchema = new Schema(
 
 const channelSchema = new Schema(
   {
+    name: {
+      type: String,
+      default: 'basic'
+    },
     convo: [messageSchema]
   },
   { timestamps: true }

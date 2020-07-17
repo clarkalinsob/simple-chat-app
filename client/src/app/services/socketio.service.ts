@@ -27,6 +27,6 @@ export class SocketioService {
 
   sendMessage(msgObject: any): Observable<any> {
     this.socket.emit('new-message', msgObject)
-    return this.http.patch<any>(`${this.apiUrl}/channels/5f1003dcdbe57008904a09cf`, { msgObject })
+    return this.http.patch<any>(`${this.apiUrl}/channels/basic`, { msgObject })
   }
 }
