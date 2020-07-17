@@ -30,6 +30,10 @@ export class AuthService {
     }
   }
 
+  getToken(): string {
+    return localStorage.getItem('chatapp:token')
+  }
+
   signin(username: string, password: string) {
     return this.http
       .post<any>(`${this.apiUrl}/auth/signin`, { username, password })

@@ -34,7 +34,9 @@ router.post('/signin', async (req, res) => {
 
     await newUser.save()
 
-    token = jwt.sign({ user: { username } }, process.env.SECRET_KEY)
+    token = await jwt.sign({ user: { username } }, process.env.SECRET_KEY, {
+      expiresIn: '12h'
+    })
     return res.json({ token })
   }
 
@@ -42,7 +44,9 @@ router.post('/signin', async (req, res) => {
   const match = await bcrypt.compare(password, user.password)
   if (!match) return res.json('Password did not match')
 
-  token = jwt.sign({ user: { username } }, process.env.SECRET_KEY)
+  token = await jwt.sign({ user: { username } }, process.env.SECRET_KEY, {
+    expiresIn: '12h'
+  })
   res.json({ token })
 })
 
